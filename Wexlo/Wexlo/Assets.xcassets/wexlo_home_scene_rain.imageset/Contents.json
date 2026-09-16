@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "wexlo_home_scene_rain.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "wexlo_home_scene_rain@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "wexlo_home_scene_rain@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
