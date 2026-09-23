@@ -310,7 +310,6 @@ private final class RechargeCollectionHeaderView: UICollectionReusableView {
     )
     private let balanceValueLabel = UILabel()
     private let sectionTitleLabel = UILabel()
-    private let sectionSubtitleLabel = UILabel()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -338,16 +337,10 @@ private final class RechargeCollectionHeaderView: UICollectionReusableView {
         sectionTitleLabel.font = WexloTheme.font(size: 24, weight: .black)
         sectionTitleLabel.textColor = WexloTheme.primaryText
 
-        sectionSubtitleLabel.text = "One-time purchase"
-        sectionSubtitleLabel.font = WexloTheme.font(size: 15, weight: .regular)
-        sectionSubtitleLabel.textColor = WexloTheme.secondaryText
-        sectionSubtitleLabel.textAlignment = .right
-
         [
             bannerImageView,
             balanceValueLabel,
-            sectionTitleLabel,
-            sectionSubtitleLabel
+            sectionTitleLabel
         ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
@@ -368,13 +361,6 @@ private final class RechargeCollectionHeaderView: UICollectionReusableView {
 
             sectionTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             sectionTitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6),
-
-            sectionSubtitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
-            sectionSubtitleLabel.centerYAnchor.constraint(equalTo: sectionTitleLabel.centerYAnchor),
-            sectionSubtitleLabel.leadingAnchor.constraint(
-                greaterThanOrEqualTo: sectionTitleLabel.trailingAnchor,
-                constant: 12
-            )
         ])
     }
 

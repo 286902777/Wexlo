@@ -1,0 +1,64 @@
+{
+  "buildCommand" : {
+    "command" : "build",
+    "skipDependencies" : false,
+    "style" : "buildOnly"
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "2ffcf1d0e01756bd0da32f09f7ec2d37fd36d4223fc86277637a31830f5f1439"
+    }
+  ],
+  "containerPath" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo.xcodeproj",
+  "continueBuildingAfterErrors" : false,
+  "dependencyScope" : "workspace",
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "undefined_arch",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : true,
+      "hostTargetedPlatform" : null,
+      "platform" : "iphonesimulator",
+      "sdk" : "iphonesimulator26.5",
+      "sdkVariant" : "iphonesimulator",
+      "supportedArchitectures" : [
+        "i386",
+        "x86_64"
+      ],
+      "targetArchitecture" : "undefined_arch"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Products",
+      "derivedDataPath" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Index.noindex/PrecompiledHeaders",
+      "pchPath" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "commandLine" : {
+        "table" : {
+          "CODE_SIGNING_ALLOWED" : "NO"
+        }
+      },
+      "synthesized" : {
+        "table" : {
+          "ACTION" : "build",
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "YES",
+          "ONLY_ACTIVE_ARCH" : "YES"
+        }
+      }
+    }
+  },
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

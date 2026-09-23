@@ -15,6 +15,7 @@ final class AIStylistViewController: UIViewController,
     private let avatarView = UIImageView(image: UIImage(named: "wexlo_ai_stylist_avatar"))
     private let titleLabel = UILabel()
     private let subtitleLabel = UILabel()
+    private let coinsButton = UIButton(type: .custom)
     private let fixedIntroView = UIView()
     private let fixedIntroMessageView = AIIncomingMessageView(frame: .zero)
     private let fixedPromptView = AIQuickPromptView(frame: .zero)
@@ -26,6 +27,7 @@ final class AIStylistViewController: UIViewController,
     private var composerBottomConstraint: NSLayoutConstraint?
     private var fixedIntroMessageHeightConstraint: NSLayoutConstraint?
     private var isSending = false
+    private var hasPresentedEntryDialog = false
 
     private var items: [ChatItem] = []
 
@@ -53,6 +55,12 @@ final class AIStylistViewController: UIViewController,
         configureMessages()
         configureComposer()
         configureKeyboardHandling()
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(coinsDidChange(_:)),
+            name: .wexloCoinsDidChange,
+            object: nil
+        )
     }
 
     override func viewDidLayoutSubviews() {
@@ -70,7 +78,9 @@ final class AIStylistViewController: UIViewController,
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        updateCoinsButton()
         scrollToLatest(animated: false)
+        presentEntryDialogIfNeeded()
     }
 
     deinit {
@@ -101,7 +111,25 @@ final class AIStylistViewController: UIViewController,
         subtitleLabel.textColor = WexloTheme.secondaryText
         subtitleLabel.font = WexloTheme.font(size: 15)
 
-        [backButton, avatarView, titleLabel, subtitleLabel].forEach {
+        var coinConfiguration = UIButton.Configuration.plain()
+        coinConfiguration.image = UIImage(named: "wexlo_coin")?.withRenderingMode(.alwaysOriginal)
+        coinConfiguration.imagePadding = 5
+        coinConfiguration.contentInsets = NSDirectionalEdgeInsets(
+            top: 0,
+            leading: 10,
+            bottom: 0,
+            trailing: 10
+        )
+        coinConfiguration.baseForegroundColor = WexloTheme.primaryText
+        coinsButton.configuration = coinConfiguration
+        coinsButton.backgroundColor = WexloTheme.surface
+        coinsButton.layer.cornerRadius = 18
+        coinsButton.layer.borderWidth = 1
+        coinsButton.layer.borderColor = WexloTheme.hairline.cgColor
+        coinsButton.accessibilityLabel = "Coin balance"
+        coinsButton.addTarget(self, action: #selector(didTapCoins), for: .touchUpInside)
+
+        [backButton, avatarView, titleLabel, subtitleLabel, coinsButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             headerView.addSubview($0)
         }
@@ -126,11 +154,22 @@ final class AIStylistViewController: UIViewController,
 
             titleLabel.leadingAnchor.constraint(equalTo: avatarView.trailingAnchor, constant: 14),
             titleLabel.topAnchor.constraint(equalTo: avatarView.topAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16),
+            titleLabel.trailingAnchor.constraint(
+                lessThanOrEqualTo: coinsButton.leadingAnchor,
+                constant: -10
+            ),
 
             subtitleLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 6),
-            subtitleLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor)
+            subtitleLabel.trailingAnchor.constraint(
+                lessThanOrEqualTo: coinsButton.leadingAnchor,
+                constant: -10
+            ),
+
+            coinsButton.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16),
+            coinsButton.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 16),
+            coinsButton.widthAnchor.constraint(greaterThanOrEqualToConstant: 78),
+            coinsButton.heightAnchor.constraint(equalToConstant: 36)
         ])
     }
 
@@ -330,6 +369,21 @@ final class AIStylistViewController: UIViewController,
         navigationController?.popViewController(animated: true)
     }
 
+    @objc private func didTapCoins() {
+        navigationController?.pushViewController(
+            RechargeCoinsViewController(),
+            animated: true
+        )
+    }
+
+    @objc private func coinsDidChange(_ notification: Notification) {
+        guard let userID = notification.userInfo?["userID"] as? String,
+              userID == currentAccountID else {
+            return
+        }
+        updateCoinsButton()
+    }
+
     @objc private func didTapSend() {
         sendMessage(messageTextField.text ?? "")
     }
@@ -377,7 +431,7 @@ final class AIStylistViewController: UIViewController,
             return
         }
         guard WexloCoinStore.shared.balance(for: accountID) >= Self.messageCost else {
-            showWexloToast("You need \(Self.messageCost) coins to continue chatting.")
+            presentNotEnoughCoins()
             return
         }
 
@@ -397,7 +451,7 @@ final class AIStylistViewController: UIViewController,
             }
         } catch WexloCoinStoreError.insufficientBalance {
             isSending = false
-            showWexloToast("You need \(Self.messageCost) coins to continue chatting.")
+            presentNotEnoughCoins()
             return
         } catch {
             try? WexloCoinStore.shared.addCoins(Self.messageCost, for: accountID)
@@ -428,6 +482,43 @@ final class AIStylistViewController: UIViewController,
             self.scrollToLatest(animated: true)
             self.isSending = false
         }
+    }
+
+    private func presentEntryDialogIfNeeded() {
+        guard !hasPresentedEntryDialog else { return }
+        hasPresentedEntryDialog = true
+
+        let dialog = WexloDialogViewController(
+            title: "Ask AI Stylist",
+            message: "\(Self.messageCost) Coins per message.",
+            confirmTitle: "Confirm"
+        )
+        dialog.onCancel = { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+        present(dialog, animated: true)
+    }
+
+    private func presentNotEnoughCoins() {
+        guard presentedViewController == nil else { return }
+        let dialog = NotEnoughCoinsViewController()
+        dialog.onConfirm = { [weak self] in
+            self?.navigationController?.pushViewController(
+                RechargeCoinsViewController(),
+                animated: true
+            )
+        }
+        present(dialog, animated: true)
+    }
+
+    private func updateCoinsButton() {
+        let balance = currentAccountID.map {
+            WexloCoinStore.shared.balance(for: $0)
+        } ?? 0
+        var configuration = coinsButton.configuration ?? .plain()
+        configuration.title = "\(balance)"
+        coinsButton.configuration = configuration
+        coinsButton.accessibilityValue = "\(balance) coins"
     }
 
     private var currentAccountID: String? {

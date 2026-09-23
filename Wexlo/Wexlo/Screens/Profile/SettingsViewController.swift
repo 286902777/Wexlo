@@ -25,7 +25,7 @@ final class SettingsViewController: UIViewController {
 
     private let primaryItems = [
         Item(
-            title: "Block list",
+            title: "Block List",
             subtitle: "Manage accounts you have blocked",
             iconName: "wexlo_settings_block",
             route: "blockList",
@@ -39,7 +39,7 @@ final class SettingsViewController: UIViewController {
             isDestructive: false
         ),
         Item(
-            title: "Terms of Service",
+            title: "Terms Of Service",
             subtitle: "The rules for using Wexlo",
             iconName: "wexlo_settings_terms",
             route: "terms",
@@ -49,14 +49,14 @@ final class SettingsViewController: UIViewController {
 
     private let accountItems = [
         Item(
-            title: "Log out",
+            title: "Sign Out",
             subtitle: "Sign out of this device",
             iconName: "wexlo_settings_logout",
             route: "logout",
             isDestructive: false
         ),
         Item(
-            title: "Delete account",
+            title: "Delete Account",
             subtitle: "Permanently remove your Wexlo account",
             iconName: "wexlo_settings_delete",
             route: "delete",

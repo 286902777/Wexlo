@@ -35,7 +35,7 @@ final class HomeDiscoveryHeaderView: UICollectionReusableView,
         HomeScene(
             title: "Travel",
             subtitle: "On the Move",
-            assetName: "wexlo_scene_travel",
+            assetName: "textIcon",
             route: "travel"
         )
     ]

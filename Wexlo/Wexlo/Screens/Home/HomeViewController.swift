@@ -64,8 +64,7 @@ final class HomeViewController: WexloCollectionPageViewController,
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        feedItemsByTab = Self.makeFeedItems()
-        collectionView.reloadData()
+        refreshFeedItems()
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -119,7 +118,7 @@ final class HomeViewController: WexloCollectionPageViewController,
         let item = feedItemsByTab[selectedTabIndex][itemIndex]
         cell.configure(with: item)
         cell.onSave = { [weak self] in
-            self?.saveFeedItem()
+            self?.toggleSave(for: item)
         }
         cell.onBreakdown = { [weak self] in
             guard let self else { return }
@@ -248,14 +247,46 @@ final class HomeViewController: WexloCollectionPageViewController,
         collectionView.reloadSections(IndexSet(integer: 1))
     }
 
-    private func saveFeedItem() {
-        guard !isSaving else { return }
+    private func toggleSave(for item: HomeFeedItem) {
+        guard !isSaving, let postID = item.postID else { return }
         isSaving = true
         loadingOverlay.show(in: view)
+
+        let nextSavedState = !item.isSaved
+        guard WexloSavedOutfitStore.shared.setSaved(
+            nextSavedState,
+            postID: postID,
+            userID: Self.saveUserID
+        ) else {
+            loadingOverlay.hide()
+            isSaving = false
+            showWexloToast("Outfit could not be saved.")
+            return
+        }
+
         completeWexloLoading(loadingOverlay) { [weak self] in
             guard let self else { return }
             isSaving = false
-            showWexloToast("Saved to your looks.")
+            refreshFeedItems()
+            showWexloToast(
+                nextSavedState ? "Saved to your looks." : "Removed from your saved looks."
+            )
+        }
+    }
+
+    private func refreshFeedItems() {
+        feedItemsByTab = Self.makeFeedItems()
+        collectionView.reloadData()
+    }
+
+    private static var saveUserID: String {
+        switch WexloSessionStore.shared.current {
+        case .authenticated(let userID):
+            return userID
+        case .guest:
+            return "guest"
+        case .absent:
+            return "anonymous"
         }
     }
 

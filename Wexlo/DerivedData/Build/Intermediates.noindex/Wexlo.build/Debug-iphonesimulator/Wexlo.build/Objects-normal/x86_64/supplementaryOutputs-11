@@ -1,0 +1,58 @@
+{
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/GeneratedAssetSymbols.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/GeneratedAssetSymbols.swiftdeps"
+  },
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/AppDelegate.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/AppDelegate.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/AppDelegate.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/AppDelegate.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/AppDelegate.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/AppDelegate.swiftdeps"
+  },
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/SceneDelegate.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/SceneDelegate.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/SceneDelegate.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/SceneDelegate.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/SceneDelegate.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/SceneDelegate.swiftdeps"
+  },
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/Screens/Publish/PublishViewController.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/PublishViewController.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/PublishViewController.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/PublishViewController.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/PublishViewController.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/PublishViewController.swiftdeps"
+  },
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/Screens/Report/ReportViewController.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/ReportViewController.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/ReportViewController.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/ReportViewController.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/ReportViewController.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/ReportViewController.swiftdeps"
+  },
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/TabBar/FloatingTabBar.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/FloatingTabBar.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/FloatingTabBar.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/FloatingTabBar.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/FloatingTabBar.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/FloatingTabBar.swiftdeps"
+  },
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/TabBar/WexloTabBarController.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloTabBarController.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloTabBarController.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloTabBarController.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloTabBarController.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloTabBarController.swiftdeps"
+  },
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/ViewController.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/ViewController.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/ViewController.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/ViewController.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/ViewController.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/ViewController.swiftdeps"
+  }
+}

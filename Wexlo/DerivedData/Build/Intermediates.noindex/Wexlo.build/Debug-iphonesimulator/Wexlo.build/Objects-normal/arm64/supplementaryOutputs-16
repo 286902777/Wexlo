@@ -1,0 +1,58 @@
+{
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/Screens/Explore/JacketsViewController.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/JacketsViewController.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/JacketsViewController.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/JacketsViewController.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/JacketsViewController.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/JacketsViewController.swiftdeps"
+  },
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/Screens/Explore/PantsViewController.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/PantsViewController.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/PantsViewController.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/PantsViewController.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/PantsViewController.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/PantsViewController.swiftdeps"
+  },
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/Screens/Explore/RainyDayViewController.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/RainyDayViewController.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/RainyDayViewController.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/RainyDayViewController.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/RainyDayViewController.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/RainyDayViewController.swiftdeps"
+  },
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/Screens/Explore/SceneDetailViewController.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/SceneDetailViewController.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/SceneDetailViewController.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/SceneDetailViewController.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/SceneDetailViewController.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/SceneDetailViewController.swiftdeps"
+  },
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/Screens/Explore/ShoesViewController.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/ShoesViewController.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/ShoesViewController.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/ShoesViewController.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/ShoesViewController.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/ShoesViewController.swiftdeps"
+  },
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/Screens/Explore/ThemeDetailViewController.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/ThemeDetailViewController.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/ThemeDetailViewController.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/ThemeDetailViewController.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/ThemeDetailViewController.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/ThemeDetailViewController.swiftdeps"
+  },
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/Screens/Explore/TravelViewController.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/TravelViewController.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/TravelViewController.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/TravelViewController.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/TravelViewController.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/TravelViewController.swiftdeps"
+  },
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/Screens/Home/HomeDiscoveryHeaderView.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/HomeDiscoveryHeaderView.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/HomeDiscoveryHeaderView.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/HomeDiscoveryHeaderView.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/HomeDiscoveryHeaderView.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/arm64/HomeDiscoveryHeaderView.swiftdeps"
+  }
+}

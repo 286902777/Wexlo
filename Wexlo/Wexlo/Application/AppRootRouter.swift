@@ -93,6 +93,10 @@ final class AppRootRouter: NSObject {
                 authorization?.markEULAAccepted()
                 authorization?.dismiss(animated: true)
             }
+            eula.onCancel = {
+                // User declined the EULA: terminate the app.
+                exit(0)
+            }
             authorization?.present(eula, animated: true)
         }
     }

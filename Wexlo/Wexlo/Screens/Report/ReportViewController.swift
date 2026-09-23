@@ -91,7 +91,7 @@ final class ReportViewController: UIViewController, UITableViewDataSource, UITab
         }
 
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 25),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: submitButton.topAnchor, constant: -16),
@@ -102,7 +102,7 @@ final class ReportViewController: UIViewController, UITableViewDataSource, UITab
             contentView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor),
 
-            pageTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 78),
+            pageTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
             pageTitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             pageTitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             pageTitleLabel.heightAnchor.constraint(equalToConstant: 40),

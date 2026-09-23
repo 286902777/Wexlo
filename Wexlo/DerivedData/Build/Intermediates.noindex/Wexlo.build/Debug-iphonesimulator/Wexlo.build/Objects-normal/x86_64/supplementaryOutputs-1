@@ -1,0 +1,65 @@
+{
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/Application/AppRootRouter.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/AppRootRouter.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/AppRootRouter.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/AppRootRouter.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/AppRootRouter.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/AppRootRouter.swiftdeps"
+  },
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/Application/WexloAccountStore.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloAccountStore.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloAccountStore.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloAccountStore.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloAccountStore.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloAccountStore.swiftdeps"
+  },
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/Application/WexloCoinStore.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloCoinStore.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloCoinStore.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloCoinStore.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloCoinStore.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloCoinStore.swiftdeps"
+  },
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/Application/WexloCommentStore.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloCommentStore.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloCommentStore.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloCommentStore.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloCommentStore.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloCommentStore.swiftdeps"
+  },
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/Application/WexloKeychainStore.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloKeychainStore.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloKeychainStore.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloKeychainStore.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloKeychainStore.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloKeychainStore.swiftdeps"
+  },
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/Application/WexloLocalContentStore.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloLocalContentStore.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloLocalContentStore.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloLocalContentStore.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloLocalContentStore.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloLocalContentStore.swiftdeps"
+  },
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/Application/WexloPurchaseService.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloPurchaseService.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloPurchaseService.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloPurchaseService.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloPurchaseService.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloPurchaseService.swiftdeps"
+  },
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/Application/WexloSessionStore.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloSessionStore.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloSessionStore.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloSessionStore.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloSessionStore.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloSessionStore.swiftdeps"
+  },
+  "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/Wexlo/Application/WexloSocialStore.swift" : {
+    "const-values" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloSocialStore.swiftconstvalues",
+    "dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloSocialStore.d",
+    "diagnostics" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloSocialStore.dia",
+    "object" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloSocialStore.o",
+    "swift-dependencies" : "/Users/myfy/Desktop/MYFY/Wexlo/Wexlo/DerivedData/Build/Intermediates.noindex/Wexlo.build/Debug-iphonesimulator/Wexlo.build/Objects-normal/x86_64/WexloSocialStore.swiftdeps"
+  }
+}

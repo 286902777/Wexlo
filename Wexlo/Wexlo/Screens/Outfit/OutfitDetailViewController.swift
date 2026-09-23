@@ -410,6 +410,7 @@ final class OutfitDetailViewController: UIViewController, UITextFieldDelegate, U
         let row = UIStackView()
         row.axis = .horizontal
         row.alignment = .center
+        row.distribution = .fillEqually
         row.spacing = 24
         let likeState = WexloLikeStore.shared.state(for: post, userID: likeUserID)
         isLiked = likeState.isLiked
@@ -424,15 +425,13 @@ final class OutfitDetailViewController: UIViewController, UITextFieldDelegate, U
         configureSaveButton()
         saveButton.addTarget(self, action: #selector(didTapSave), for: .touchUpInside)
         row.addArrangedSubview(saveButton)
-        commentButton.setTitle(
-            "Comment \(WexloCommentStore.shared.count(for: post))",
-            for: .normal
+        configureActionButton(
+            commentButton,
+            systemName: "bubble.right",
+            title: "Comment \(WexloCommentStore.shared.count(for: post))",
+            tintColor: WexloTheme.secondaryText
         )
-        commentButton.setTitleColor(WexloTheme.secondaryText, for: .normal)
-        commentButton.tintColor = WexloTheme.secondaryText
-        commentButton.titleLabel?.font = WexloTheme.font(size: 13)
         row.addArrangedSubview(commentButton)
-        row.addArrangedSubview(UIView())
         return row
     }
 
@@ -678,19 +677,32 @@ final class OutfitDetailViewController: UIViewController, UITextFieldDelegate, U
         let body = makeLabel(text, size: 14, color: WexloTheme.primaryText)
         body.numberOfLines = 0
         let timeLabel = makeLabel(time, size: 12, color: WexloTheme.secondaryText)
-        let more = UIButton(type: .custom)
-        more.setImage(UIImage(named: "wexlo_outfit_more"), for: .normal)
-        more.imageView?.contentMode = .scaleAspectFit
-        more.accessibilityLabel = "More comment actions"
-        if let authorID,
-           case .authenticated(let currentUserID) = WexloSessionStore.shared.current {
-            more.isHidden = authorID == currentUserID
+        var moreButton: UIButton?
+        if let authorID, isOtherUser(authorID) {
+            let button = UIButton(type: .custom)
+            button.setImage(UIImage(named: "wexlo_outfit_more"), for: .normal)
+            button.imageView?.contentMode = .scaleAspectFit
+            button.accessibilityLabel = "More comment actions"
+            button.accessibilityIdentifier = authorID
+            button.addTarget(
+                self,
+                action: #selector(didTapCommentMore(_:)),
+                for: .touchUpInside
+            )
+            moreButton = button
         }
 
-        [avatar, name, body, timeLabel, more].forEach {
+        [avatar, name, body, timeLabel].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             row.addSubview($0)
         }
+        if let moreButton {
+            moreButton.translatesAutoresizingMaskIntoConstraints = false
+            row.addSubview(moreButton)
+        }
+
+        let textTrailingAnchor = moreButton?.leadingAnchor ?? row.trailingAnchor
+        let textTrailingConstant: CGFloat = moreButton == nil ? 0 : -8
         NSLayoutConstraint.activate([
             avatar.leadingAnchor.constraint(equalTo: row.leadingAnchor),
             avatar.topAnchor.constraint(equalTo: row.topAnchor),
@@ -699,18 +711,28 @@ final class OutfitDetailViewController: UIViewController, UITextFieldDelegate, U
             avatar.bottomAnchor.constraint(lessThanOrEqualTo: row.bottomAnchor),
             name.leadingAnchor.constraint(equalTo: avatar.trailingAnchor, constant: 9),
             name.topAnchor.constraint(equalTo: row.topAnchor),
-            name.trailingAnchor.constraint(lessThanOrEqualTo: more.leadingAnchor, constant: -8),
+            name.trailingAnchor.constraint(
+                lessThanOrEqualTo: textTrailingAnchor,
+                constant: textTrailingConstant
+            ),
             body.leadingAnchor.constraint(equalTo: name.leadingAnchor),
             body.topAnchor.constraint(equalTo: name.bottomAnchor, constant: 2),
-            body.trailingAnchor.constraint(lessThanOrEqualTo: more.leadingAnchor, constant: -8),
+            body.trailingAnchor.constraint(
+                lessThanOrEqualTo: textTrailingAnchor,
+                constant: textTrailingConstant
+            ),
             timeLabel.leadingAnchor.constraint(equalTo: name.leadingAnchor),
             timeLabel.topAnchor.constraint(equalTo: body.bottomAnchor, constant: 4),
-            timeLabel.bottomAnchor.constraint(equalTo: row.bottomAnchor),
-            more.trailingAnchor.constraint(equalTo: row.trailingAnchor),
-            more.topAnchor.constraint(equalTo: row.topAnchor, constant: -7),
-            more.widthAnchor.constraint(equalToConstant: 24),
-            more.heightAnchor.constraint(equalToConstant: 24)
+            timeLabel.bottomAnchor.constraint(equalTo: row.bottomAnchor)
         ])
+        if let moreButton {
+            NSLayoutConstraint.activate([
+                moreButton.trailingAnchor.constraint(equalTo: row.trailingAnchor),
+                moreButton.topAnchor.constraint(equalTo: row.topAnchor, constant: -7),
+                moreButton.widthAnchor.constraint(equalToConstant: 24),
+                moreButton.heightAnchor.constraint(equalToConstant: 24)
+            ])
+        }
         return row
     }
 
@@ -829,43 +851,44 @@ final class OutfitDetailViewController: UIViewController, UITextFieldDelegate, U
         return button
     }
 
-    private func makeActionButton(systemName: String?, title: String) -> UIButton {
-        let button = UIButton(type: .system)
-        if let systemName {
-            button.configuration = .plain()
-            button.configuration?.imagePadding = 1
-            button.setImage(UIImage(systemName: systemName), for: .normal)
-            button.setTitle(title, for: .normal)
-        } else {
-            button.setTitle(title, for: .normal)
-        }
-        button.setTitleColor(WexloTheme.secondaryText, for: .normal)
-        button.tintColor = WexloTheme.secondaryText
-        button.titleLabel?.font = WexloTheme.font(size: 13)
-        return button
+    private func configureActionButton(
+        _ button: UIButton,
+        systemName: String,
+        title: String,
+        tintColor: UIColor
+    ) {
+        let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 12)
+        button.setImage(
+            UIImage(systemName: systemName, withConfiguration: symbolConfiguration),
+            for: .normal
+        )
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(tintColor, for: .normal)
+        button.tintColor = tintColor
+        button.titleLabel?.font = WexloTheme.font(size: 12)
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 2)
+        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 0)
     }
 
     private func configureLikeButton() {
-        likeButton.configuration = .plain()
-        likeButton.configuration?.imagePadding = 1
-        let image = isLiked
-            ? UIImage(named: "wexlo_outfit_like_selected")?.withRenderingMode(.alwaysOriginal)
-            : UIImage(systemName: "heart")
-        likeButton.setImage(image, for: .normal)
-        likeButton.setTitle("\(likeCount)", for: .normal)
-        likeButton.setTitleColor(WexloTheme.secondaryText, for: .normal)
-        likeButton.tintColor = WexloTheme.secondaryText
-        likeButton.titleLabel?.font = WexloTheme.font(size: 13)
+        configureActionButton(
+            likeButton,
+            systemName: "heart",
+            title: "\(likeCount)",
+            tintColor: isLiked ? .red : WexloTheme.secondaryText
+        )
         likeButton.accessibilityLabel = isLiked ? "Unlike outfit" : "Like outfit"
         likeButton.accessibilityValue = "\(likeCount) likes"
         likeButton.accessibilityTraits = isLiked ? [.button, .selected] : [.button]
     }
 
     private func configureSaveButton() {
-        saveButton.setTitle(isSaved ? "Saved" : "Save", for: .normal)
-        saveButton.setTitleColor(WexloTheme.secondaryText, for: .normal)
-        saveButton.tintColor = WexloTheme.secondaryText
-        saveButton.titleLabel?.font = WexloTheme.font(size: 13)
+        configureActionButton(
+            saveButton,
+            systemName: "bookmark",
+            title: isSaved ? "Saved" : "Save",
+            tintColor: isSaved ? .red : WexloTheme.secondaryText
+        )
         saveButton.accessibilityLabel = isSaved
             ? "Remove from saved outfits"
             : "Save outfit"
@@ -913,6 +936,47 @@ final class OutfitDetailViewController: UIViewController, UITextFieldDelegate, U
         present(alert, animated: true)
     }
 
+    @objc private func didTapCommentMore(_ sender: UIButton) {
+        guard let authorID = sender.accessibilityIdentifier,
+              isOtherUser(authorID) else {
+            return
+        }
+
+        let alert = UIAlertController(
+            title: nil,
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+        alert.addAction(UIAlertAction(title: "Report", style: .default) { [weak self] _ in
+            self?.navigationController?.pushViewController(
+                ReportViewController(),
+                animated: true
+            )
+        })
+        alert.addAction(UIAlertAction(title: "Block", style: .destructive) { [weak self] _ in
+            self?.blockCommentAuthor(authorID)
+        })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+
+        if let popover = alert.popoverPresentationController {
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                popover.sourceView = sender
+                popover.sourceRect = sender.bounds
+            } else if #available(iOS 26.0, *) {
+                let safeAreaFrame = view.safeAreaLayoutGuide.layoutFrame
+                popover.sourceView = view
+                popover.sourceRect = CGRect(
+                    x: safeAreaFrame.midX,
+                    y: safeAreaFrame.maxY - 1,
+                    width: 1,
+                    height: 1
+                )
+                popover.permittedArrowDirections = []
+            }
+        }
+        present(alert, animated: true)
+    }
+
     private func blockAuthor() {
         guard case .authenticated(let accountID) = WexloSessionStore.shared.current else {
             showWexloToast("Please sign in to block users.")
@@ -920,6 +984,22 @@ final class OutfitDetailViewController: UIViewController, UITextFieldDelegate, U
         }
         guard !isCurrentUserAuthor else { return }
         guard WexloBlockStore.shared.blockUser(post.authorID, for: accountID) else {
+            showWexloToast("Unable to block this user.")
+            return
+        }
+
+        let previousViewController = navigationController?.viewControllers.dropLast().last
+        navigationController?.popViewController(animated: true)
+        previousViewController?.showWexloToast("User blocked.")
+    }
+
+    private func blockCommentAuthor(_ authorID: String) {
+        guard isOtherUser(authorID) else { return }
+        guard case .authenticated(let accountID) = WexloSessionStore.shared.current else {
+            showWexloToast("Please sign in to block users.")
+            return
+        }
+        guard WexloBlockStore.shared.blockUser(authorID, for: accountID) else {
             showWexloToast("Unable to block this user.")
             return
         }

@@ -22,17 +22,17 @@ private struct JacketsCategoryConfiguration {
     init(route: String) {
         switch route {
         case "pants":
-            self.init(title: "Pants", subtitle: "Utility and trail fits", badge: "Shop the mood", imageName: "wexlo_explore_pants", databaseCategory: "Bottoms")
+            self.init(title: "Pants", subtitle: "Utility and trail fits", badge: "", imageName: "wexlo_explore_pants", databaseCategory: "Bottoms")
         case "shoes":
-            self.init(title: "Shoes", subtitle: "Outdoor and trail shoes", badge: "Shop the mood", imageName: "wexlo_explore_shoes", databaseCategory: "Footwear")
+            self.init(title: "Shoes", subtitle: "Outdoor and trail shoes", badge: "", imageName: "wexlo_explore_shoes", databaseCategory: "Footwear")
         case "bags":
-            self.init(title: "Bags", subtitle: "Daily and travel carry", badge: "Shop the mood", imageName: "wexlo_explore_bags", databaseCategory: "Equipment")
+            self.init(title: "Bags", subtitle: "Daily and travel carry", badge: "", imageName: "wexlo_explore_bags", databaseCategory: "Equipment")
         case "fleece":
-            self.init(title: "Fleece", subtitle: "Soft mid-layers", badge: "Shop the mood", imageName: "wexlo_explore_fleece", databaseCategory: "Tops")
+            self.init(title: "Fleece", subtitle: "Soft mid-layers", badge: "", imageName: "wexlo_explore_fleece", databaseCategory: "Tops")
         case "accessories":
-            self.init(title: "Accessories", subtitle: "Caps, eyewear, extras", badge: "Shop the mood", imageName: "wexlo_explore_accessories", databaseCategory: "Accessories")
+            self.init(title: "Accessories", subtitle: "Caps, eyewear, extras", badge: "", imageName: "wexlo_explore_accessories", databaseCategory: "Accessories")
         default:
-            self.init(title: "Jackets", subtitle: "Shells and light layers for changing weather.", badge: "Shop the mood", imageName: "wexlo_explore_jackets", databaseCategory: "Outerwear")
+            self.init(title: "Jackets", subtitle: "Shells and light layers for changing weather.", badge: "", imageName: "wexlo_explore_jackets", databaseCategory: "Outerwear")
         }
     }
 
@@ -222,7 +222,7 @@ private final class JacketsSectionHeaderCell: UICollectionViewCell {
         titleLabel.text = "Recommended looks"
         titleLabel.font = WexloTheme.font(size: 24, weight: .bold)
         titleLabel.textColor = WexloTheme.primaryText
-        trailingLabel.text = "For you"
+        trailingLabel.text = ""
         trailingLabel.font = WexloTheme.font(size: 14)
         trailingLabel.textColor = WexloTheme.secondaryText
         trailingLabel.textAlignment = .right

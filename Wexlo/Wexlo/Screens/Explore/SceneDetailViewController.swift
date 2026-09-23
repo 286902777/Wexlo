@@ -192,22 +192,22 @@ private final class SceneHeroCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         shadeView.backgroundColor = UIColor.black.withAlphaComponent(0.28)
-        badgeLabel.font = WexloTheme.font(size: 14, weight: .bold)
+        badgeLabel.font = WexloTheme.font(size: 12, weight: .bold)
         badgeLabel.textColor = .white
         badgeLabel.backgroundColor = UIColor.black.withAlphaComponent(0.62)
         badgeLabel.layer.cornerRadius = 20
         badgeLabel.clipsToBounds = true
         badgeLabel.textAlignment = .center
-        titleLabel.font = WexloTheme.font(size: 34, weight: .bold)
+        titleLabel.font = WexloTheme.font(size: 32, weight: .bold)
         titleLabel.textColor = .white
         subtitleLabel.font = WexloTheme.font(size: 15)
         subtitleLabel.textColor = UIColor.white.withAlphaComponent(0.9)
         subtitleLabel.numberOfLines = 2
         for label in [categoryLabel, countLabel] {
-            label.font = WexloTheme.font(size: 14)
+            label.font = WexloTheme.font(size: 12)
             label.textColor = .white
             label.backgroundColor = UIColor.black.withAlphaComponent(0.28)
-            label.layer.cornerRadius = 16
+            label.layer.cornerRadius = 14
             label.clipsToBounds = true
             label.textAlignment = .center
         }
@@ -218,10 +218,10 @@ private final class SceneHeroCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor), imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor), imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor), imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             shadeView.topAnchor.constraint(equalTo: contentView.topAnchor), shadeView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor), shadeView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor), shadeView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            badgeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20), badgeLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40), badgeLabel.heightAnchor.constraint(equalToConstant: 40), badgeLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 150),
+            badgeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20), badgeLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40), badgeLabel.heightAnchor.constraint(equalToConstant: 40), badgeLabel.widthAnchor.constraint(equalToConstant: 180),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20), titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16), titleLabel.topAnchor.constraint(equalTo: badgeLabel.bottomAnchor, constant: 16),
             subtitleLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor), subtitleLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor), subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 6),
-            categoryLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20), categoryLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16), categoryLabel.heightAnchor.constraint(equalToConstant: 32), categoryLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 116),
+            categoryLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20), categoryLabel.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 4), categoryLabel.heightAnchor.constraint(equalToConstant: 28), categoryLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 116),
             countLabel.leadingAnchor.constraint(equalTo: categoryLabel.trailingAnchor, constant: 10), countLabel.bottomAnchor.constraint(equalTo: categoryLabel.bottomAnchor), countLabel.heightAnchor.constraint(equalTo: categoryLabel.heightAnchor), countLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 84)
         ])
     }

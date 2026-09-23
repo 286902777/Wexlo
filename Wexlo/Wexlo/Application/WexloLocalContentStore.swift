@@ -745,6 +745,8 @@ final class WexloLocalContentStore {
 
     private func homeFeedItem(for post: WexloLocalPost) -> HomeFeedItem {
         let author = user(for: post.authorID)
+        let activeUserID = Self.currentActiveUserID
+        let likeState = WexloLikeStore.shared.state(for: post, userID: activeUserID)
         return HomeFeedItem(
             postID: post.id,
             authorID: post.authorID,
@@ -753,7 +755,7 @@ final class WexloLocalContentStore {
             ageAndWeather: "Today · \(post.setting)",
             description: post.detail,
             tags: [post.category, post.styleTag, post.setting],
-            likes: post.likes,
+            likes: "\(likeState.count)",
             mediaAssetName: post.mediaAssetName,
             mediaFileName: post.mediaFileName,
             mediaKind: post.mediaKind,
@@ -763,8 +765,24 @@ final class WexloLocalContentStore {
             avatarAssetName: post.authorAvatarAssetName.isEmpty
                 ? author?.avatarAssetName
                 : post.authorAvatarAssetName,
-            mediaContainsTitleOverlay: false
+            mediaContainsTitleOverlay: false,
+            isLiked: likeState.isLiked,
+            isSaved: WexloSavedOutfitStore.shared.isSaved(
+                postID: post.id,
+                userID: activeUserID
+            )
         )
+    }
+
+    private static var currentActiveUserID: String {
+        switch WexloSessionStore.shared.current {
+        case .authenticated(let userID):
+            return userID
+        case .guest:
+            return "guest"
+        case .absent:
+            return "anonymous"
+        }
     }
 
     private func loadPublishedPosts() -> [WexloLocalPost] {

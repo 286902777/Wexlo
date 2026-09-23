@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>12</integer>
+	<key>logs</key>
+	<dict>
+		<key>1EBB6434-5451-4517-B87D-637A1C171316</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>1EBB6434-5451-4517-B87D-637A1C171316.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>28</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Wexlo project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Wexlo</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project Wexlo with scheme Wexlo and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>811327080.97747695</real>
+			<key>timeStoppedRecording</key>
+			<real>811327085.07096601</real>
+			<key>title</key>
+			<string>Building project Wexlo with scheme Wexlo and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>1EBB6434-5451-4517-B87D-637A1C171316</string>
+		</dict>
+		<key>629D4E7B-AE8F-40F6-9B3F-55234FBEBE68</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>629D4E7B-AE8F-40F6-9B3F-55234FBEBE68.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>28</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Wexlo project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Wexlo</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project Wexlo with scheme Wexlo and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>811326814.41767001</real>
+			<key>timeStoppedRecording</key>
+			<real>811326830.75410998</real>
+			<key>title</key>
+			<string>Building project Wexlo with scheme Wexlo and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>629D4E7B-AE8F-40F6-9B3F-55234FBEBE68</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

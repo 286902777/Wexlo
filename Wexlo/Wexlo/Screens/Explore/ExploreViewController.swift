@@ -15,6 +15,9 @@ private struct ExploreRecommendation {
     let styleTag: String
     let context: String
     let imageName: String
+    let mediaFileName: String
+    let mediaKind: WexloMediaKind
+    let mediaStorage: WexloMediaStorage
 }
 
 final class ExploreViewController: WexloCollectionPageViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -32,7 +35,7 @@ final class ExploreViewController: WexloCollectionPageViewController, UICollecti
         ExploreTile(title: "Weekend Camp", subtitle: "86 looks outside", imageName: "wexlo_explore_weekend_camp", route: "camping")
     ]
 
-    private let allRecommendations: [ExploreRecommendation] = {
+    private var allRecommendations: [ExploreRecommendation] {
         let store = WexloLocalContentStore.shared
         return store.posts.compactMap { post in
             guard let author = store.user(for: post.authorID) else { return nil }
@@ -43,10 +46,13 @@ final class ExploreViewController: WexloCollectionPageViewController, UICollecti
                 author: author.name,
                 styleTag: post.styleTag,
                 context: post.setting,
-                imageName: post.mediaAssetName ?? "wexlo_outfit_detail_cover"
+                imageName: post.mediaAssetName ?? "wexlo_outfit_detail_cover",
+                mediaFileName: post.mediaFileName,
+                mediaKind: post.mediaKind,
+                mediaStorage: post.mediaStorage
             )
         }
-    }()
+    }
 
     private let filters = ["Gorpcore", "City Outdoor", "Techwear", "Minimal Outdoor"]
     private var selectedFilter = 0
@@ -146,13 +152,13 @@ final class ExploreViewController: WexloCollectionPageViewController, UICollecti
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ExploreSectionHeaderView.reuseIdentifier, for: indexPath) as! ExploreSectionHeaderView
         switch indexPath.section {
         case 1:
-            header.configure(title: "Browse categories", trailing: "Shop the mood")
+            header.configure(title: "Browse categories", trailing: "")
         case 2:
             header.configure(title: "Trending themes", trailing: "Updated this week")
         default:
             header.configure(
                 title: "Recommended looks",
-                trailing: "\(filteredRecommendations.count) looks",
+                trailing: "",
                 filters: filters,
                 selectedIndex: selectedFilter
             ) { [weak self] index in
@@ -340,6 +346,13 @@ private final class ExploreRecommendationCell: UICollectionViewCell {
     private let contextLabel = UILabel()
     private let breakdownButton = UIButton(type: .system)
     private let saveButton = UIButton(type: .system)
+    private var representedMediaKey: String?
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        representedMediaKey = nil
+        imageView.image = nil
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -411,10 +424,35 @@ private final class ExploreRecommendationCell: UICollectionViewCell {
     }
 
     func configure(with recommendation: ExploreRecommendation) {
-        imageView.image = croppedImage(named: recommendation.imageName)
         titleLabel.text = recommendation.title
         authorLabel.text = "\(recommendation.author) · \(recommendation.styleTag)"
         contextLabel.text = recommendation.context
+
+        let mediaKey = recommendation.mediaFileName
+        representedMediaKey = mediaKey
+
+        if recommendation.mediaKind == .image,
+           recommendation.mediaStorage == .local,
+           let mediaURL = WexloLocalContentStore.shared.mediaURL(for: recommendation.mediaFileName),
+           let image = UIImage(contentsOfFile: mediaURL.path) {
+            // User-published photo post: show the actual cover from local storage.
+            imageView.image = image
+        } else if recommendation.mediaKind == .video {
+            // Video post: show the first frame as the cover.
+            imageView.image = croppedImage(named: recommendation.imageName)
+            let mediaKey = recommendation.mediaFileName
+            WexloVideoMedia.loadFirstFrame(
+                for: recommendation.mediaFileName,
+                storage: recommendation.mediaStorage
+            ) { [weak self] frame in
+                guard let self,
+                      representedMediaKey == mediaKey,
+                      let frame else { return }
+                imageView.image = frame
+            }
+        } else {
+            imageView.image = croppedImage(named: recommendation.imageName)
+        }
     }
 
     private func croppedImage(named name: String) -> UIImage? {
@@ -524,6 +562,7 @@ private final class ExploreSearchViewController: WexloCollectionPageViewControll
     private let emptyStateLabel = UILabel()
     private var searchResults: [HomeFeedItem] = []
     private var hasSearched = false
+    private var isTogglingSave = false
 
     init() {
         super.init(headerStyle: .titled("Search"), layout: UICollectionViewFlowLayout())
@@ -628,11 +667,43 @@ private final class ExploreSearchViewController: WexloCollectionPageViewControll
             for: indexPath
         ) as! HomeFeedCell
         guard searchResults.indices.contains(indexPath.item) else { return cell }
-        cell.configure(with: searchResults[indexPath.item])
+        let item = searchResults[indexPath.item]
+        cell.configure(with: item)
         cell.onSave = { [weak self] in
-            self?.showWexloToast("Saved to your looks.")
+            self?.toggleSave(for: item)
         }
         return cell
+    }
+
+    private func toggleSave(for item: HomeFeedItem) {
+        guard !isTogglingSave, let postID = item.postID else { return }
+        isTogglingSave = true
+        let nextSavedState = !item.isSaved
+        guard WexloSavedOutfitStore.shared.setSaved(
+            nextSavedState,
+            postID: postID,
+            userID: Self.saveUserID
+        ) else {
+            isTogglingSave = false
+            showWexloToast("Outfit could not be saved.")
+            return
+        }
+        isTogglingSave = false
+        performSearch()
+        showWexloToast(
+            nextSavedState ? "Saved to your looks." : "Removed from your saved looks."
+        )
+    }
+
+    private static var saveUserID: String {
+        switch WexloSessionStore.shared.current {
+        case .authenticated(let userID):
+            return userID
+        case .guest:
+            return "guest"
+        case .absent:
+            return "anonymous"
+        }
     }
 
     func collectionView(

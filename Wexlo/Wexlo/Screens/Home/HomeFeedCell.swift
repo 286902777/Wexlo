@@ -17,6 +17,8 @@ struct HomeFeedItem {
     let mediaSymbol: String?
     let avatarAssetName: String?
     let mediaContainsTitleOverlay: Bool
+    let isLiked: Bool
+    let isSaved: Bool
 
     init(
         postID: String? = nil,
@@ -34,7 +36,9 @@ struct HomeFeedItem {
         mediaColor: UIColor,
         mediaSymbol: String?,
         avatarAssetName: String?,
-        mediaContainsTitleOverlay: Bool
+        mediaContainsTitleOverlay: Bool,
+        isLiked: Bool = false,
+        isSaved: Bool = false
     ) {
         self.postID = postID
         self.authorID = authorID
@@ -52,6 +56,8 @@ struct HomeFeedItem {
         self.mediaSymbol = mediaSymbol
         self.avatarAssetName = avatarAssetName
         self.mediaContainsTitleOverlay = mediaContainsTitleOverlay
+        self.isLiked = isLiked
+        self.isSaved = isSaved
     }
 }
 
@@ -172,10 +178,7 @@ final class HomeFeedCell: UICollectionViewCell {
         descriptionLabel.numberOfLines = 2
 
         separatorView.backgroundColor = WexloTheme.hairline
-        configureTextButton(likesButton, title: "128")
-        likesButton.setImage(UIImage(systemName: "heart"), for: .normal)
         likesButton.tintColor = WexloTheme.secondaryText
-        configureTextButton(saveButton, title: "Save")
         saveButton.addTarget(self, action: #selector(didTapSave), for: .touchUpInside)
 
         breakdownBackground.layer.cornerRadius = 16
@@ -276,7 +279,7 @@ final class HomeFeedCell: UICollectionViewCell {
             likesButton.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 16),
             likesButton.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 12),
             likesButton.heightAnchor.constraint(equalToConstant: 34),
-            saveButton.leadingAnchor.constraint(equalTo: likesButton.trailingAnchor, constant: 14),
+            saveButton.leadingAnchor.constraint(equalTo: likesButton.trailingAnchor, constant: 10),
             saveButton.centerYAnchor.constraint(equalTo: likesButton.centerYAnchor),
             saveButton.heightAnchor.constraint(equalToConstant: 34),
 
@@ -379,7 +382,21 @@ final class HomeFeedCell: UICollectionViewCell {
         ageWeatherLabel.text = item.ageAndWeather
         followButton.isHidden = currentAccountID == item.authorID
         descriptionLabel.text = item.description
-        likesButton.setTitle(item.likes, for: .normal)
+        let likeTintColor: UIColor = item.isLiked ? .red : WexloTheme.secondaryText
+        configureActionButton(
+            likesButton,
+            systemName: "heart",
+            title: item.likes,
+            tintColor: likeTintColor
+        )
+
+        let saveTintColor: UIColor = item.isSaved ? .red : WexloTheme.secondaryText
+        configureActionButton(
+            saveButton,
+            systemName: "bookmark",
+            title: item.isSaved ? "Saved" : "Save",
+            tintColor: saveTintColor
+        )
 
         for index in tagViews.indices {
             tagViews[index].text = index < item.tags.count ? item.tags[index] : nil
@@ -395,17 +412,35 @@ final class HomeFeedCell: UICollectionViewCell {
         button.layer.borderColor = WexloTheme.hairline.cgColor
     }
 
+    private func configureActionButton(
+        _ button: UIButton,
+        systemName: String,
+        title: String,
+        tintColor: UIColor
+    ) {
+        let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 12)
+        button.setImage(
+            UIImage(systemName: systemName, withConfiguration: symbolConfiguration),
+            for: .normal
+        )
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(tintColor, for: .normal)
+        button.tintColor = tintColor
+        button.titleLabel?.font = WexloTheme.font(size: 12)
+        button.titleLabel?.lineBreakMode = .byClipping
+        button.imageEdgeInsets = .zero
+        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 0)
+        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        button.setContentCompressionResistancePriority(.required, for: .horizontal)
+        button.setContentHuggingPriority(.required, for: .horizontal)
+        button.titleLabel?.setContentCompressionResistancePriority(.required, for: .horizontal)
+    }
+
     private var currentAccountID: String? {
         if case .authenticated(let userID) = WexloSessionStore.shared.current {
             return userID
         }
         return nil
-    }
-
-    private func configureTextButton(_ button: UIButton, title: String) {
-        button.setTitle(title, for: .normal)
-        button.setTitleColor(WexloTheme.secondaryText, for: .normal)
-        button.titleLabel?.font = WexloTheme.font(size: 12, weight: .regular)
     }
 
     @objc private func didTapSave() {
